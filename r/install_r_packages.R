@@ -1,45 +1,116 @@
 
-packages <- c(
-  ## tools
-  "future", "BiocParallel", "parallel", "gamlss", "rlang", "httr", "RCurl", "xml2", "devtools", 
-  "RSQLite", "jsonlite", "yaml",
+# install BiocManager (package installer)
+if(!requireNamespace("BiocManager")) install.packages("BiocManager")
+
+# packages
+pkgs <- c(
+  # common useful packages
+  "tidyverse"
+  , "readxl"
+  , "writexl"
+  , "devtools"
+  , "jsonlite"
+  , "hdf5r"
+  , "RSQLite"
+  , "rlist"
+  , "yaml"
+  , "IDPmisc" # utilities for data process
+  , "batchelor" # batch remove
+  , "tm"
+  , "caret" # machine learning
   
-  ## Data manipulation
-  "tidyverse", "readxl", "writexl", "rslit", "tidyverse", "lubridate", "broom", "IDPmisc",
+  # system process
+  , "cliapp" # style R output console
+  , "callr" # call R form R
+  , "progress" # progress bar in terminal
+  , "future" # pareller computing
   
-  ##  Bioinformatics
-  "clusterExperiment", "SingleCellExperiment", "clusterProfiler", "tximport", "DESeq2", "DEGreport", 
-  "edgeR", "Seurat", "ChIPseeker", "batchelor", "DropletUtils", "Biostrings", "rtracklayer", "slingshot",
+  # web process
+  , "httr"
+  , "rvest"
+  , "RCurl"
+
+  #  bioinformatic tools
+  , "rtracklayer"
+  , "GenomicFeatures"
+  , "Biostrings"
+  , "SummarizedExperiment"
+  , "DESeq2"
+  , "edgeR"
+  , "limma"
+  , "tximport"
+  , "DEGreport" # reporting tools for DEG analysis
+  , "clusterProfiler"
+  , "Seurat"
+  , "slingshot" # pseudotime
   
-  ## Annotation of genomic data
-  "AnnotationHub", "biomaRt", "GO.db", "org.Ms.eg.db", "org.Hs.eg.db", "msigdbr", 
-  "TxDb.Hsapiens.UCSC.hg38.knownGene", "TxDb.Mmusculus.UCSC.mm10.knownGene", "BSgenome",
+  #  bioinformatic anntation
+  , "AnnotationHub"
+  , "biomaRt"
+  , "BSgenome"
+  , "org.Hs.eg.db"
+  , "org.Mm.eg.db"
+  , "TxDb.Hsapiens.UCSC.hg38.knownGene"
+  , "TxDb.Mmusculus.UCSC.mm10.knownGene"
+  , "ReactomePA"
+
+  # plot
+  , "RColorBrewer" # color palettes
+  , "gridExtra"
+  , "patchwork" # plots composer
+  , "pathview"
+  , "plotly"
+  , "GGally"
+  , "ggforce"
+  , "ggfortify"
+  , "igraph"
+  , "intergraph"
+  , "network"
+  , "sna"
+  , "networkD3"
+  , "ggraph"
+  , "tidygraph"
+  , "ggrepel"
+  , "ggridges"
+  , "ggstatsplot"
+  , "cowplot"
+  , "ggpubr"
+  , "corrplot" # correlation
+  , "dendextend" # complex dendrogram
+  , "circlize" # circular visualization
+  , "ComplexHeatmap"
+  , "wordcloud2"
   
-  ## Data visualization
-  "circlize", "dendextend", "patchwork", "ComplexHeatmap", "pheatmap", "corrplot", "cowplot", "ggpubr", 
-  "eulerr", "ggfortify", "ggforce", "ggplotify", "ggrepel", "ggraph", "ggridges", "ggdendro", "RColorBrewer", 
-  "heatmaply", "networkD3", "pathview", "KEGGgraph", "plotly", "UpSetR", "ggstatsplot",
-  
-  ## Shiny webpage
-  "Shiny", "shinyalert", "shinyBS", "shinyjs", "shinydashboard", "shinythemes", "shinyWidgets", "DT", 
-  "htmlwidgets", "bs4Dash", "shinyFeedback"
+  # shiny
+  , "shiny"
+  , "shinydashboard"
+  , "bs4Dash" # more elegand dashboard based on bootstrap 4
+  , "shinyjs"
+  , "shinyalert"
+  , "shinyBS"
+  , "shinythemes"
+  , "shinyWidgets"
+  , "htmlwidgets"
+  , "htmltools"
+  , "DT"
+  , "rhandsontable"
   
 )
 
 
-options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
+# mirror
+options(repos=c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
 options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
 
-
-# install Bioconductor
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager", update = TRUE, ask = FALSE)
-
-# install Packages
-BiocManager::install(pkgs = packages, update = TRUE, ask = FALSE)
+# install packages
+BiocManager::install(pkgs)
 
 
-# Failded Packages
-print("Failed installment : ")
-print(paste0(setdiff(packages, rownames(installed.packages())),
-             collapse = ", "))
+
+# create KEGG.db
+devtools::install_github("YuLab-SMU/createKEGGdb")
+createKEGGdb::create_kegg_db(c("hsa", "mmu"))
+devtools::install_local("./KEGG.db_1.0.tar.gz")
+
+
+
