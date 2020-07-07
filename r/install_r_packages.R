@@ -12,19 +12,20 @@ pkgs <- c(
   , "jsonlite"
   , "hdf5r"
   , "RSQLite"
+  , "svglite"
   , "rlist"
   , "yaml"
+  , "here"
   , "IDPmisc" # utilities for data process
-  , "batchelor" # batch remove
   , "tm"
   , "caret" # machine learning
-  
+
   # system process
   , "cliapp" # style R output console
   , "callr" # call R form R
   , "progress" # progress bar in terminal
   , "future" # pareller computing
-  
+
   # web process
   , "httr"
   , "rvest"
@@ -38,15 +39,24 @@ pkgs <- c(
   , "DESeq2"
   , "edgeR"
   , "limma"
+  , "sva"
+  , "apeglm"
+  , "ashr"
   , "tximport"
   , "DEGreport" # reporting tools for DEG analysis
   , "clusterProfiler"
   , "Seurat"
   , "slingshot" # pseudotime
-  
+  , "batchelor" # batch remove
+  , "CEMiTool" # co-expression analysis
+  , "PCAtools" # PCA analysis
+  , "factoextra"
+  , "eulerr"
+
   #  bioinformatic anntation
   , "AnnotationHub"
   , "biomaRt"
+  , "mygene"
   , "BSgenome"
   , "org.Hs.eg.db"
   , "org.Mm.eg.db"
@@ -73,19 +83,21 @@ pkgs <- c(
   , "ggrepel"
   , "ggridges"
   , "ggstatsplot"
+  , "ggbeeswarm"
   , "cowplot"
   , "ggpubr"
   , "corrplot" # correlation
   , "dendextend" # complex dendrogram
   , "circlize" # circular visualization
   , "ComplexHeatmap"
-  , "wordcloud2"
-  
+  , "wordcloud2"# shiny ggplot2
+  , "esquisse" 
+
   # shiny
   , "shiny"
   , "shinydashboard"
-  , "bs4Dash" # more elegand dashboard based on bootstrap 4
   , "shinyjs"
+  , "V8"
   , "shinyalert"
   , "shinyBS"
   , "shinythemes"
@@ -94,7 +106,10 @@ pkgs <- c(
   , "htmltools"
   , "DT"
   , "rhandsontable"
-  
+
+  # github packages
+  , "satijalab/seurat-wrappers"
+  , "AnalytixWare/ShinySky"
 )
 
 
@@ -104,7 +119,6 @@ options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
 
 # install packages
 BiocManager::install(pkgs)
-
 
 
 # create KEGG.db
