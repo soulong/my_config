@@ -19,12 +19,14 @@ pkgs <- c(
   , "IDPmisc" # utilities for data process
   , "tm"
   , "caret" # machine learning
+  , "soulong/bioTools"
   
   # system process
   , "cliapp" # style R output console
   , "callr" # call R form R
   , "progress" # progress bar in terminal
-  , "future" # pareller computing
+  , "future" # parreller computing
+
   
   # web process
   , "httr"
@@ -32,7 +34,7 @@ pkgs <- c(
   , "RCurl"
   
   #  bioinformatic tools
-  , "rtracklayer"
+  , "rtracklayer" # genomics data manipulation
   , "GenomicFeatures"
   , "Biostrings"
   , "SummarizedExperiment"
@@ -46,12 +48,20 @@ pkgs <- c(
   , "DEGreport" # reporting tools for DEG analysis
   , "clusterProfiler"
   , "Seurat"
+  , "satijalab/seurat-wrappers"
   , "slingshot" # pseudotime
   , "batchelor" # batch remove
-  , "CEMiTool" # co-expression analysis
-  , "PCAtools" # PCA analysis
+  # , "CEMiTool" # co-expression analysis
+  # , "PCAtools" # PCA analysis
   , "factoextra"
   , "eulerr"
+  , "AUCell" # scenic tf analysis
+  , "RcisTarget" # scenic tf analysis
+  , "GENIE3" # scenic tf analysis
+  , "aertslab/SCENIC" # scenic tf analysis
+  , "mojaveazure/loomR" # loom file
+  , "dorothea" # TF regulon DB
+  , "viper" # regulation analysis
   
   #  bioinformatic anntation
   , "AnnotationHub"
@@ -90,6 +100,7 @@ pkgs <- c(
   , "dendextend" # complex dendrogram
   , "circlize" # circular visualization
   , "ComplexHeatmap"
+  , "pheatmap"
   , "wordcloud2"# shiny ggplot2
   , "esquisse" 
   
@@ -106,9 +117,7 @@ pkgs <- c(
   , "htmltools"
   , "DT"
   , "rhandsontable"
-  
-  # github packages
-  , "satijalab/seurat-wrappers"
+
 )
 
 # mirror
