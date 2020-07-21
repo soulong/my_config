@@ -47,6 +47,7 @@ pkgs <- c(
   , "tximport"
   , "DEGreport" # reporting tools for DEG analysis
   , "clusterProfiler"
+  , "ReactomePA"
   , "Seurat"
   , "satijalab/seurat-wrappers"
   , "slingshot" # pseudotime
@@ -62,17 +63,17 @@ pkgs <- c(
   , "mojaveazure/loomR" # loom file
   , "dorothea" # TF regulon DB
   , "viper" # regulation analysis
+  , "soGGi"
   
   #  bioinformatic anntation
   , "AnnotationHub"
   , "biomaRt"
-  , "mygene"
-  , "BSgenome"
   , "org.Hs.eg.db"
   , "org.Mm.eg.db"
   , "TxDb.Hsapiens.UCSC.hg38.knownGene"
   , "TxDb.Mmusculus.UCSC.mm10.knownGene"
-  , "ReactomePA"
+  , "BSgenome.Hsapiens.UCSC.hg38"
+  , "BSgenome.Mmusculus.UCSC.mm10"
   
   # plot
   , "RColorBrewer" # color palettes
