@@ -64,6 +64,8 @@ pkgs <- c(
   , "dorothea" # TF regulon DB
   , "viper" # regulation analysis
   , "soGGi"
+  , "ChIPseeker"
+  , "Rsubread"
   
   #  bioinformatic anntation
   , "AnnotationHub"
