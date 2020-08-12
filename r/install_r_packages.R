@@ -66,7 +66,8 @@ pkgs <- c(
   , "soGGi"
   , "ChIPseeker"
   , "ChIPQC"
-
+  , "Rsubread"
+  
   #  bioinformatic anntation
   , "AnnotationHub"
   , "biomaRt"
