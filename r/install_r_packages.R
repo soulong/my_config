@@ -20,19 +20,19 @@ pkgs <- c(
   , "tm"
   , "caret" # machine learning
   , "soulong/bioTools"
-  
+
   # system process
   , "cliapp" # style R output console
   , "callr" # call R form R
   , "progress" # progress bar in terminal
   , "future" # parreller computing
 
-  
+
   # web process
   , "httr"
   , "rvest"
   , "RCurl"
-  
+
   #  bioinformatic tools
   , "rtracklayer" # genomics data manipulation
   , "GenomicFeatures"
@@ -64,7 +64,9 @@ pkgs <- c(
   , "dorothea" # TF regulon DB
   , "viper" # regulation analysis
   , "soGGi"
-  
+  , "ChIPseeker"
+  , "ChIPQC"
+
   #  bioinformatic anntation
   , "AnnotationHub"
   , "biomaRt"
@@ -74,7 +76,7 @@ pkgs <- c(
   , "TxDb.Mmusculus.UCSC.mm10.knownGene"
   , "BSgenome.Hsapiens.UCSC.hg38"
   , "BSgenome.Mmusculus.UCSC.mm10"
-  
+
   # plot
   , "RColorBrewer" # color palettes
   , "gridExtra"
@@ -102,9 +104,10 @@ pkgs <- c(
   , "circlize" # circular visualization
   , "ComplexHeatmap"
   , "pheatmap"
+  , "heatmaply"
   , "wordcloud2"# shiny ggplot2
-  , "esquisse" 
-  
+  , "esquisse"
+
   # shiny
   , "shiny"
   , "shinydashboard"
