@@ -5,7 +5,7 @@ sudo apt update && \
 	sudo apt install screenfetch wget curl vim git \
     	libv8-dev libcurl4-openssl-dev libxml2-dev libssl-dev \
     	libfontconfig1-dev libcairo2-dev libhdf5-dev libmpfr-dev libgmp-dev \
-    	texlive-full libudunits2-dev libgdal-dev
+    	imagemagick texlive-full libudunits2-dev libgdal-dev 
 
 
 
@@ -17,8 +17,8 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD
 	sudo apt install r-base
 
 # setup china mirror
-echo 'options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))' >> ~/.Rprofile && \
-	echo 'options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")' >> ~/.Rprofile
+echo 'options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))' >> ~/.Rprofile
+echo 'options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")' >> ~/.Rprofile
 
 # install r-studio from website and install it
 
