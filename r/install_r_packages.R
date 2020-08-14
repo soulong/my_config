@@ -108,6 +108,7 @@ pkgs <- c(
   , "heatmaply"
   , "wordcloud2"# shiny ggplot2
   , "esquisse"
+  , "extrafont"
 
   # shiny
   , "shiny"
