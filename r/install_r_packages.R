@@ -18,7 +18,12 @@ pkgs <- c(
   , "here"
   , "IDPmisc" # utilities for data process
   , "tm"
-  , "caret" # machine learning
+  , "furrr"
+  , "keras"
+  , "tfruns"
+  , "tfestimators"
+  , "tidymodels" # machine learning
+  , "EBImage"
   , "soulong/bioTools"
 
   # system process
@@ -133,7 +138,7 @@ options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
 
 # install packages
 BiocManager::install(pkgs)
-
+extrafont::fo
 
 # re-install failed packages
 pkgs_uninstalled <- setdiff(pkgs, rownames(installed.packages()))

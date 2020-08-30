@@ -1,20 +1,21 @@
 
+
 ######## install libs and tools ########
 sudo apt update && \
-	sudo apt upgrade -y && \
-	sudo apt install screenfetch wget curl vim git \
-    	libv8-dev libcurl4-openssl-dev libxml2-dev libssl-dev \
-    	libfontconfig1-dev libcairo2-dev libhdf5-dev libmpfr-dev libgmp-dev \
-    	imagemagick texlive-full libudunits2-dev libgdal-dev 
+  sudo apt upgrade -y && \
+  sudo apt install screenfetch wget curl vim git \
+      libv8-dev libcurl4-openssl-dev libxml2-dev libssl-dev \
+      libfontconfig1-dev libcairo2-dev libhdf5-dev libmpfr-dev libgmp-dev \
+      imagemagick texlive-full libudunits2-dev libgdal-dev libfftw3-dev
 
 
 
 
 ######## install R ########
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
-	sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" && \
-	sudo apt update && \
-	sudo apt install r-base
+  sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" && \
+  sudo apt update && \
+  sudo apt install r-base
 
 # setup china mirror
 echo 'options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))' >> ~/.Rprofile
@@ -29,12 +30,12 @@ echo 'options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")' 
 # sudo apt-get remove docker docker-engine docker.io containerd runc
 # install
 sudo apt update && \
-	sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common && \
-	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
-	sudo apt-key fingerprint 0EBFCD88 && \
-	sudo add-apt-repository "deb https://download.docker.com/linux/ubuntu focal stable" &&\
-	sudo apt update && \
-	sudo apt install docker-ce docker-ce-cli containerd.io docker-compose
+  sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common && \
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
+  sudo apt-key fingerprint 0EBFCD88 && \
+  sudo add-apt-repository "deb https://download.docker.com/linux/ubuntu focal stable" &&\
+  sudo apt update && \
+  sudo apt install docker-ce docker-ce-cli containerd.io docker-compose
 
 
 
@@ -63,9 +64,3 @@ conda install fastqc multiqc fastp salmon star bowtie2 subread samtools bedtools
 
 ## uninstall conda
 ## rm -rf ~/miniconda3 ~/.condarc ~/.conda ~/.continuum
-
-
-
-
-
-
