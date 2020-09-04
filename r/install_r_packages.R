@@ -17,13 +17,14 @@ pkgs <- c(
   , "yaml"
   , "here"
   , "IDPmisc" # utilities for data process
-  , "tm"
   , "furrr"
+  , "tm"
+  , "EBImage"
+  , "tidymodels" # machine learning
   , "keras"
   , "tfruns"
   , "tfestimators"
-  , "tidymodels" # machine learning
-  , "EBImage"
+  , "tfdatasets"
   , "soulong/bioTools"
 
   # system process
