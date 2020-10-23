@@ -7,7 +7,7 @@ sudo apt update && \
       libv8-dev libcurl4-openssl-dev libxml2-dev libssl-dev \
       libfontconfig1-dev libcairo2-dev libhdf5-dev libmpfr-dev libgmp-dev \
       imagemagick libmagick++-dev texlive-full libudunits2-dev libgdal-dev \
-      libfftw3-dev 
+      libfftw3-dev libopenblas-base
 
 
 
